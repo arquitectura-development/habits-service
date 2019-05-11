@@ -30,7 +30,10 @@ class HabitController {
     )
     fun create(@RequestBody body: Habit, @RequestParam userId: Int) {
         transaction {
-            repository.create(body)
+            if (body != null)
+                repository.create(body)
+            else throw  ResponseStatusException(
+                    HttpStatus.BAD_REQUEST, "Incorrect json");
         }
 
     }
@@ -46,14 +49,14 @@ class HabitController {
                 if (userId == 0)
                     repository.findAll(userId)
                 else throw  ResponseStatusException(
-                        HttpStatus.NON_AUTHORITATIVE_INFORMATION, "Incorrect userId");
+                        HttpStatus.UNAUTHORIZED, "Incorrect userId");
             }
 
     @GetMapping("/users/habits")
     @ApiResponses(
             ApiResponse(code = 200, message = "Successful operation"),
             ApiResponse(code = 401, message = "Incorrect userId"),
-            ApiResponse(code = 404, message = "Incorrect userId"),
+            ApiResponse(code = 404, message = "Habit or user not found"),
             ApiResponse(code = 500, message = "Server error")
     )
     fun findByUserId(@RequestParam userId: Int, @RequestParam(required=false)id: Int): List<Habit> =
@@ -73,7 +76,11 @@ class HabitController {
     )
     fun deleteAll(@RequestParam userId: Int) =
         transaction {
-            repository.deleteAll()
+            if (userId == 0)
+                repository.deleteAll()
+            else throw  ResponseStatusException(
+                    HttpStatus.UNAUTHORIZED, "Incorrect userId");
+
         }
 
     @DeleteMapping("/users/habits")
@@ -97,9 +104,13 @@ class HabitController {
                 ApiResponse(code = 404, message = "Habit or user not found"),
                 ApiResponse(code = 500, message = "Server error")
         )
-        fun update(@RequestParam id: Int, @RequestParam userId: Int, @RequestBody habit: Habit): Habit =
+        fun update(@RequestParam id: Int, @RequestParam userId: Int, @RequestBody body: Habit): Habit =
                 transaction {
-                    repository.update(userId, id, habit)
+                    if (body != null)
+                        repository.update(userId, id, body)
+                    else throw  ResponseStatusException(
+                            HttpStatus.BAD_REQUEST, "Incorrect json");
+
                 }
     }
 }
