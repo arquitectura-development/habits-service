@@ -28,7 +28,6 @@ object Cities : Table() {
 fun main(args: Array<String>) {
     //Database.connect("jdbc:mysql://127.0.0.1:3306/habits", driver = "com.mysql.jdbc.Driver")
 
-    Database.connect("jdbc:mysql://127.0.0.1:3306/habits", driver = "com.mysql.jdbc.Driver")
 
     Database.connect("jdbc:mysql://sql3.freemysqlhosting.net", driver = "com.mysql.jdbc.Driver",
             user = "sql3291433", password = "p9j5YyqdNy")
