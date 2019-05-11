@@ -45,14 +45,14 @@ class HabitController {
         }
     }
 
-    @DeleteMapping("/id")
+    @DeleteMapping("/{id}")
     fun deleteById(@PathVariable id: Int ){
         transaction {
             repository.deleteById(id)
         }
     }
 
-    @PutMapping ("/id")
+    @PutMapping ("/{id}")
     fun update (@PathVariable id: Int, @RequestBody habit: Habit): Habit =
             transaction {
                 repository.update(id, habit)

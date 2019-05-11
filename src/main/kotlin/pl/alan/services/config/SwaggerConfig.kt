@@ -41,7 +41,7 @@ class SwaggerConfig {
                 .apiInfo(apiInfo(version))
                 .select()
                 .apis(RequestHandlerSelectors.any())
-                .paths{ it.equals("/habits")}
+                .paths(PathSelectors.any())
                 .build()
                 .useDefaultResponseMessages(false)
                 .forCodeGeneration(true)
