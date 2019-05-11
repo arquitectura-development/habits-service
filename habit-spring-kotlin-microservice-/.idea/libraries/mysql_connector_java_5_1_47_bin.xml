@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="mysql-connector-java-5.1.47-bin" type="kotlin.js">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/Documents/mysql-connector-java-5.1.47-bin.jar!/" />
+    </SOURCES>
+  </library>
+</component>
