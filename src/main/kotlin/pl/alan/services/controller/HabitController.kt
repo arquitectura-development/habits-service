@@ -111,7 +111,8 @@ class HabitController {
                         if (userId != null)
                             repository.update(userId, id, body)
 
-                        else
+                        else throw  ResponseStatusException(
+                                HttpStatus.UNAUTHORIZED, "Incorrect userID");
 
                         else throw  ResponseStatusException(
                             HttpStatus.BAD_REQUEST, "Incorrect json");

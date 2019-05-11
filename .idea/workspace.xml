@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2b8f3599-461d-46ac-bda2-e6adace4cd3a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/controller/HabitController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/controller/HabitController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/DefaultHabitDbRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/DefaultHabitDbRepository.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -95,8 +94,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/alan/services/controller/HabitController.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="57" column="66" lean-forward="true" selection-start-line="57" selection-start-column="66" selection-end-line="57" selection-end-column="66" />
+            <state relative-caret-position="358">
+              <caret line="116" column="60" lean-forward="true" selection-start-line="116" selection-start-column="60" selection-end-line="116" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -412,7 +411,7 @@
       <workItem from="1557551878550" duration="35000" />
       <workItem from="1557559163195" duration="2979000" />
       <workItem from="1557562174259" duration="660000" />
-      <workItem from="1557563333678" duration="24504000" />
+      <workItem from="1557563333678" duration="24656000" />
     </task>
     <servers />
   </component>
@@ -449,20 +448,20 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75260000" />
+    <option name="totallyTimeSpent" value="75412000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3400853" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3400853" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.097508125" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.097508125" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -472,7 +471,7 @@
       <window_info anchor="bottom" id="Spring" order="9" weight="0.32936078" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.3391116" />
+      <window_info active="true" anchor="bottom" id="Messages" order="12" visible="true" weight="0.3391116" />
       <window_info anchor="bottom" id="Terminal" order="13" weight="0.32936078" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -609,8 +608,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/alan/services/controller/HabitController.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="57" column="66" lean-forward="true" selection-start-line="57" selection-start-column="66" selection-end-line="57" selection-end-column="66" />
+        <state relative-caret-position="358">
+          <caret line="116" column="60" lean-forward="true" selection-start-line="116" selection-start-column="60" selection-end-line="116" selection-end-column="60" />
         </state>
       </provider>
     </entry>
