@@ -7,6 +7,7 @@ import org.jetbrains.exposed.sql.transactions.transaction
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
+import org.springframework.web.server.ResponseStatusException
 import pl.alan.services.model.Habit
 import pl.alan.services.repository.DefaultHabitDbRepository
 
@@ -44,8 +45,8 @@ class HabitController {
             transaction {
                 if (userId == 0)
                     repository.findAll(userId)
-                else
-                    return HttpStatus.valueOf("409")
+                else throw  ResponseStatusException(
+                        HttpStatus.NON_AUTHORITATIVE_INFORMATION, "Incorrect userId");
             }
 
     @GetMapping("/users/habits")
