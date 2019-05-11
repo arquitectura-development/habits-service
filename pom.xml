@@ -71,6 +71,11 @@
 
         <!-- SQLite dialect -->
         <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.47</version>
+        </dependency>
+        <dependency>
             <groupId>tel.egram.kuery</groupId>
             <artifactId>sqlite</artifactId>
             <version>0.5.3</version>
