@@ -21,7 +21,7 @@ class DefaultHabitDbRepository() : HabitDbRepository {
         return habit
     }
 
-    fun update(id: Int, habit: Habit): Habit {
+    fun update(userId: Int, id: Int, habit: Habit): Habit {
         Habits.update({Habits.id eq  id}){
             it[name] = habit.name
             it[habitType] = habit.habitType
@@ -34,7 +34,7 @@ class DefaultHabitDbRepository() : HabitDbRepository {
 
     override fun findAll(userId: Int): List<Habit> =
 
-            if (userId == 1)
+            if (userId == 0)
                 Habits.selectAll().map {
                 //onnectDatabase()
                 fromRow(it)
@@ -78,10 +78,15 @@ class DefaultHabitDbRepository() : HabitDbRepository {
 
     }
 
+    fun findByUserId(userId: Int): List<Habit> =
+                Habits.select {(Habits.userId eq userId)}.map {
+                    fromRow(it)
+                }
     fun findByUserId(userId: Int, id: Int): List<Habit> =
-        Habits.select {((Habits.id eq id) and (Habits.userId eq userId))}.map {
-            fromRow(it)
-        }
+            Habits.select {((Habits.id eq id) and (Habits.userId eq userId))}.map {
+                fromRow(it)
+            }
+
 
     fun deleteById(userId: Int ,id: Int) =
             Habits.deleteWhere {((Habits.id eq id) and  (Habits.userId eq userId))}
@@ -112,7 +117,7 @@ class DefaultHabitDbRepository() : HabitDbRepository {
         }
     }
 
-    fun updateHabitScore(habit: Habit) {
+    fun updateHabitScore(habit: Habit, userId: Int) {
         var scoreDelta = habit.difficulty
         var scoreCategory = getHabitColor(habit);
         if (habit.habitType == good) {
@@ -129,7 +134,7 @@ class DefaultHabitDbRepository() : HabitDbRepository {
             }
         }
         transaction {
-            update(habit.id!!, habit)
+            update(habit.id!!, userId, habit)
         }
     }
 
