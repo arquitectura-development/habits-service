@@ -52,14 +52,14 @@ class HabitController {
                         HttpStatus.UNAUTHORIZED, "Incorrect userId");
             }
 
-    @GetMapping("/users/habits")
+    @GetMapping("/users/habits/{id}")
     @ApiResponses(
             ApiResponse(code = 200, message = "Successful operation"),
             ApiResponse(code = 401, message = "Incorrect userId"),
             ApiResponse(code = 404, message = "Habit or user not found"),
             ApiResponse(code = 500, message = "Server error")
     )
-    fun findByUserId(@RequestParam userId: Int, @RequestParam(required=false)id: Int): List<Habit> =
+    fun findByUserId(@RequestParam userId: Int, @PathVariable (required=false)id: Int): List<Habit> =
             transaction {
                 if (id != null)
                     repository.findByUserId(userId, id)
@@ -107,8 +107,13 @@ class HabitController {
         fun update(@RequestParam id: Int, @RequestParam userId: Int, @RequestBody body: Habit): Habit =
                 transaction {
                     if (body != null)
-                        repository.update(userId, id, body)
-                    else throw  ResponseStatusException(
+
+                        if (userId != null)
+                            repository.update(userId, id, body)
+
+                        else
+
+                        else throw  ResponseStatusException(
                             HttpStatus.BAD_REQUEST, "Incorrect json");
 
                 }

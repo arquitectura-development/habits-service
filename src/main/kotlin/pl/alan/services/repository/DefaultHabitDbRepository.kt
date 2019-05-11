@@ -82,8 +82,14 @@ class DefaultHabitDbRepository() : HabitDbRepository {
                 Habits.select {(Habits.userId eq userId)}.map {
                     fromRow(it)
                 }
+
     fun findByUserId(userId: Int, id: Int): List<Habit> =
             Habits.select {((Habits.id eq id) and (Habits.userId eq userId))}.map {
+                fromRow(it)
+            }
+
+    fun findUser(userId: Int): List<Habit> =
+            Habits.select {(Habits.userId eq userId)}.map {
                 fromRow(it)
             }
 
