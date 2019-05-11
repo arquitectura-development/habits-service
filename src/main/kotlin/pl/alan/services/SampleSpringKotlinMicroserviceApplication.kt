@@ -26,8 +26,7 @@ object Cities : Table() {
 }
 
 fun main(args: Array<String>) {
-    //Database.connect("jdbc:mysql://127.0.0.1:3306/habits", driver = "com.mysql.jdbc.Driver")
-    Database.connect("jdbc:mysql://den1.mysql2.gear.host/habits", driver = "com.mysql.jdbc.Driver")
+    Database.connect("jdbc:mysql://127.0.0.1:3306/habits", driver = "com.mysql.jdbc.Driver")
 
     runApplication<SampleSpringKotlinMicroserviceApplication>(*args)
 
