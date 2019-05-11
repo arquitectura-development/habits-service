@@ -9,7 +9,7 @@ import pl.alan.services.model.Habit
 import pl.alan.services.repository.DefaultHabitDbRepository
 
 @RestController
-@RequestMapping("/habits")
+@RequestMapping //("/habits")
 class HabitController {
 
     @Autowired
@@ -18,42 +18,43 @@ class HabitController {
 
 */
 
-    @PostMapping
+    @PostMapping("/users/habits")
     @ResponseStatus(HttpStatus.CREATED)
-    fun create(@RequestBody h: Habit) {
+    fun create(@RequestBody body: Habit, @RequestParam userId: Int) {
         transaction {
-            repository.create(h)
+            repository.create(body)
         }
+
     }
 
-    @GetMapping
-    fun findAll(): List<Habit> =
+    @GetMapping("/admin/habits")
+    fun findAll(@RequestParam userId: Int): List<Habit> =
             transaction {
                 repository.findAll()
             }
 
-    @GetMapping("/{id}")
-    fun findByUserId(@PathVariable userId: Int): List<Habit> =
+    @GetMapping("/users/habits")
+    fun findByUserId(@RequestParam userId: Int): List<Habit> =
             transaction {
                 repository.findByUserId(userId)
             }
 
-    @DeleteMapping
-    fun deleteAll() {
+    @DeleteMapping("/admin/habits")
+    fun deleteAll(@RequestParam userId: Int) {
         transaction {
             repository.deleteAll()
         }
     }
 
-    @DeleteMapping("/{id}")
-    fun deleteById(@PathVariable id: Int ){
+    @DeleteMapping("/users/habits")
+    fun deleteById(@RequestParam userId: Int){
         transaction {
-            repository.deleteById(id)
+            repository.deleteById(userId)
         }
     }
 
-    @PutMapping ("/{id}")
-    fun update (@PathVariable id: Int, @RequestBody habit: Habit): Habit =
+    @PutMapping("/users/habits")
+    fun update (@RequestParam id: Int, @RequestParam userId: Int, @RequestBody habit: Habit): Habit =
             transaction {
                 repository.update(id, habit)
             }
