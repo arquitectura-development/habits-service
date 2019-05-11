@@ -57,7 +57,7 @@ class HabitControllerTests {
         var lista  = listOf<Habit>()
 
         lista = transaction {
-            repository.findByUserId(2)
+            repository.findByUserId(2, 1)
         }
         Assert.assertEquals(1 , lista.size)
 
@@ -66,7 +66,7 @@ class HabitControllerTests {
     @Test
     fun test4DeleteHabit() {
         var habit = transaction {
-            repository.deleteById(1)
+            repository.deleteById(1, 1)
         }
         Assert.assertEquals(0 , habit)
     }
@@ -93,7 +93,7 @@ class HabitControllerTests {
         var lista  = listOf<Habit>()
 
         lista = transaction {
-            repository.findAll()
+            repository.findAll(1)
         }
         Assert.assertEquals(2 , lista.size)
 

@@ -1,5 +1,7 @@
 package pl.alan.services.controller
 
+import io.swagger.annotations.ApiResponse
+import io.swagger.annotations.ApiResponses
 import org.jetbrains.exposed.sql.Table
 import org.jetbrains.exposed.sql.transactions.transaction
 import org.springframework.beans.factory.annotation.Autowired
@@ -19,7 +21,12 @@ class HabitController {
 */
 
     @PostMapping("/users/habits")
-    @ResponseStatus(HttpStatus.CREATED)
+    @ApiResponses(
+            ApiResponse(code = 201, message = "Successful habit creation"),
+            ApiResponse(code = 400, message = "Incorrect json"),
+            ApiResponse(code = 401, message = "Incorrect userId"),
+            ApiResponse(code = 500, message = "Server error")
+    )
     fun create(@RequestBody body: Habit, @RequestParam userId: Int) {
         transaction {
             repository.create(body)
@@ -28,18 +35,34 @@ class HabitController {
     }
 
     @GetMapping("/admin/habits")
+    @ApiResponses(
+            ApiResponse(code = 200, message = "Successful operation"),
+            ApiResponse(code = 401, message = "Incorrect userId"),
+            ApiResponse(code = 500, message = "Server error")
+    )
     fun findAll(@RequestParam userId: Int): List<Habit> =
             transaction {
-                repository.findAll()
+                repository.findAll(userId)
             }
 
     @GetMapping("/users/habits")
-    fun findByUserId(@RequestParam userId: Int): List<Habit> =
+    @ApiResponses(
+            ApiResponse(code = 200, message = "Successful operation"),
+            ApiResponse(code = 401, message = "Incorrect userId"),
+            ApiResponse(code = 404, message = "Incorrect userId"),
+            ApiResponse(code = 500, message = "Server error")
+    )
+    fun findByUserId(@RequestParam userId: Int, @RequestParam id: Int): List<Habit> =
             transaction {
-                repository.findByUserId(userId)
+                repository.findByUserId(userId, id)
             }
 
     @DeleteMapping("/admin/habits")
+    @ApiResponses(
+            ApiResponse(code = 200, message = "Successful operation"),
+            ApiResponse(code = 401, message = "Incorrect userId"),
+            ApiResponse(code = 500, message = "Server error")
+    )
     fun deleteAll(@RequestParam userId: Int) {
         transaction {
             repository.deleteAll()
@@ -47,13 +70,26 @@ class HabitController {
     }
 
     @DeleteMapping("/users/habits")
-    fun deleteById(@RequestParam userId: Int){
+    @ApiResponses(
+            ApiResponse(code = 200, message = "Successful operation"),
+            ApiResponse(code = 401, message = "Incorrect userId"),
+            ApiResponse(code = 404, message = "Habit or user not found"),
+            ApiResponse(code = 500, message = "Server error")
+    )
+    fun deleteById(@RequestParam userId: Int, @RequestParam id: Int){
         transaction {
-            repository.deleteById(userId)
+            repository.deleteById(userId, id)
         }
     }
 
     @PutMapping("/users/habits")
+    @ApiResponses(
+            ApiResponse(code = 200, message = "Successful operation"),
+            ApiResponse(code = 400, message = "Incorrect json"),
+            ApiResponse(code = 401, message = "Incorrect userId"),
+            ApiResponse(code = 404, message = "Habit or user not found"),
+            ApiResponse(code = 500, message = "Server error")
+    )
     fun update (@RequestParam id: Int, @RequestParam userId: Int, @RequestBody habit: Habit): Habit =
             transaction {
                 repository.update(id, habit)

@@ -7,6 +7,7 @@ import org.jetbrains.exposed.sql.transactions.transaction
 import org.springframework.stereotype.Repository
 import pl.alan.services.Habits
 import pl.alan.services.model.Habit
+import javax.xml.ws.Response
 
 @Repository
 class DefaultHabitDbRepository() : HabitDbRepository {
@@ -31,9 +32,22 @@ class DefaultHabitDbRepository() : HabitDbRepository {
         return habit
     }
 
-    override fun findAll() = Habits.selectAll().map {
-       //onnectDatabase()
-        fromRow(it) }
+    override fun findAll(userId: Int): List<Habit> =
+
+            if (userId == 1)
+                Habits.selectAll().map {
+                //onnectDatabase()
+                fromRow(it)
+            }else {
+                Habits.select {(Habits.userId eq userId)}.map {
+                    fromRow(it)
+            }
+
+
+
+    }
+
+
 
     override fun deleteAll() = Habits.deleteAll()
 
@@ -64,13 +78,13 @@ class DefaultHabitDbRepository() : HabitDbRepository {
 
     }
 
-    fun findByUserId(userId: Int): List<Habit> =
-        Habits.select {Habits.userId eq userId}.map {
+    fun findByUserId(userId: Int, id: Int): List<Habit> =
+        Habits.select {((Habits.id eq id) and (Habits.userId eq userId))}.map {
             fromRow(it)
         }
 
-    fun deleteById(id: Int) =
-            Habits.deleteWhere {Habits.id eq id}
+    fun deleteById(userId: Int ,id: Int) =
+            Habits.deleteWhere {((Habits.id eq id) and  (Habits.userId eq userId))}
 
     fun getHabitColor(habit: Habit): Int {
         when {
