@@ -117,14 +117,14 @@ class HabitControllerTests {
         habit = transaction {
             repository.create(habit)
         }
-        repository.updateHabitScore(habit, 1)
+        repository.updateHabitScore(2, 1, habit)
         Assert.assertEquals(32.5, habit.score, 2.5)
 
         var habit2 = Habit(2, 1, "Get Drunk", habitType = 2, difficulty = 3 , score = 8.0, color = 4)
         habit2 = transaction {
             repository.create(habit2)
         }
-        repository.updateHabitScore(habit2, 1)
+        repository.updateHabitScore(2, 1, habit2)
         Assert.assertEquals(2.0, habit2.score, 6.0)
 
     }

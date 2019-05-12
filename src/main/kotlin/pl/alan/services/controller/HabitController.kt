@@ -21,6 +21,15 @@ class HabitController {
     /*
 
 */
+
+    @GetMapping()
+    @ApiResponses(
+            ApiResponse(code = 200, message = "The service is up")
+    )
+    fun up(): String {
+        return "Service is up"
+    }
+
     @GetMapping("/admin/habits")
     @ApiResponses(
             ApiResponse(code = 200, message = "Successful operation"),
@@ -150,7 +159,8 @@ class HabitController {
                                     HttpStatus.NOT_FOUND, "Habit or user not found");
                         }
                         else{
-                            habito = repository.update(userId, habitId, body)
+                            habito = repository.updateHabitScore(userId, habitId, body)
+                            //repository.update(userId, habitId, body)
 
                         }
                     }

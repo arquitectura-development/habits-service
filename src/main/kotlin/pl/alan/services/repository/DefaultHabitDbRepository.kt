@@ -121,9 +121,10 @@ class DefaultHabitDbRepository() : HabitDbRepository {
         }
     }
 
-    fun updateHabitScore(habit: Habit, userId: Int) {
+    fun updateHabitScore(userId: Int, id: Int, habit: Habit) : Habit {
         var scoreDelta = habit.difficulty
         var scoreCategory = getHabitColor(habit);
+        var body = habit
         if (habit.habitType == good) {
             when (scoreCategory) {
                 4 -> habit.score += scoreDelta / 2
@@ -138,8 +139,9 @@ class DefaultHabitDbRepository() : HabitDbRepository {
             }
         }
         transaction {
-            update(habit.id!!, userId, habit)
+            body = update(habit.id!!, userId, habit)
         }
+        return body
     }
 
 
