@@ -93,7 +93,7 @@ class HabitControllerTests {
         var lista  = listOf<Habit>()
 
         lista = transaction {
-            repository.findAll(1)
+            repository.findAll(0)
         }
         Assert.assertEquals(2 , lista.size)
 
