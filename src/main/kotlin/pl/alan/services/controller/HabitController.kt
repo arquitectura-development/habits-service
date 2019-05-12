@@ -21,9 +21,6 @@ class HabitController {
     @Autowired
     lateinit var repository: DefaultHabitDbRepository
 
-    /*
-
-*/
 
     @GetMapping()
     @ApiResponses(

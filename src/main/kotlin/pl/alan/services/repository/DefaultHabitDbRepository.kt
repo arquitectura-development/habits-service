@@ -17,7 +17,6 @@ class DefaultHabitDbRepository() : HabitDbRepository {
     override fun createTable() = SchemaUtils.create(Habits)
 
     override fun create(habit: Habit): Habit {
-        //nnectDatabase()
         Habits.insert(toRow(habit))
         return habit
     }
@@ -37,7 +36,6 @@ class DefaultHabitDbRepository() : HabitDbRepository {
 
             if (userId == 0)
                 Habits.selectAll().map {
-                //onnectDatabase()
                 fromRow(it)
             }else {
                 Habits.select {(Habits.userId eq userId)}.map {
