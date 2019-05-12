@@ -2,6 +2,7 @@ package pl.alan.services.repository
 
 import com.mysql.jdbc.Connection
 import org.jetbrains.exposed.sql.*
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.jetbrains.exposed.sql.statements.UpdateBuilder
 import org.jetbrains.exposed.sql.transactions.transaction
 import org.springframework.stereotype.Repository
@@ -22,7 +23,7 @@ class DefaultHabitDbRepository() : HabitDbRepository {
     }
 
     fun update(userId: Int, id: Int, habit: Habit): Habit {
-        Habits.update({Habits.id eq  id}){
+        Habits.update({((Habits.id eq id) and (Habits.userId eq userId))}){
             it[name] = habit.name
             it[habitType] = habit.habitType
             it[difficulty] = habit.difficulty
@@ -42,9 +43,6 @@ class DefaultHabitDbRepository() : HabitDbRepository {
                 Habits.select {(Habits.userId eq userId)}.map {
                     fromRow(it)
             }
-
-
-
     }
 
 
@@ -88,7 +86,7 @@ class DefaultHabitDbRepository() : HabitDbRepository {
                 fromRow(it)
             }
 
-    fun findUser(userId: Int): List<Habit> =
+    fun findUser(userId: Int): List <Habit> =
             Habits.select {(Habits.userId eq userId)}.map {
                 fromRow(it)
             }
@@ -146,11 +144,7 @@ class DefaultHabitDbRepository() : HabitDbRepository {
 
 
 
-    /*
-    override fun findByBoundingBox(box: PGbox2d) =
-            Habits.select { Habits.location within box }
-                    .map { fromRow(it) }
-*/
+
 
     companion object {
         //Color
