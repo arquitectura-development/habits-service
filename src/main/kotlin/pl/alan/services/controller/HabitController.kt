@@ -69,21 +69,18 @@ class HabitController {
 
     @PostMapping("/users/habits")
     @ApiResponses(
-            ApiResponse(code = 201, message = "Successful habit creation"),
+            ApiResponse(code = 200, message = "Successful habit creation"),
             ApiResponse(code = 400, message = "Incorrect json"),
             ApiResponse(code = 401, message = "Incorrect or empty userId"),
             ApiResponse(code = 500, message = "Server error")
     )
-    fun create(@RequestBody body: Habit, @RequestParam userId: Int) {
+    fun create(@RequestBody body: Habit, @RequestParam userId: Int) : HttpStatus {
         var habito: Habit = body
         transaction {
             if (body != null) {
                 if (userId != null) {
                     habito = repository.create(body)
-                    if (habito != null) {
-                        throw  ResponseStatusException(
-                                HttpStatus.CREATED, "Successful habit creation");
-                    }
+
                 } else throw  ResponseStatusException(
                         HttpStatus.UNAUTHORIZED, "Incorrect or empty userId");
             } else throw  ResponseStatusException(

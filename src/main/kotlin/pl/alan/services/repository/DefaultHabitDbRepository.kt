@@ -121,8 +121,22 @@ class DefaultHabitDbRepository() : HabitDbRepository {
         }
     }
 
+    fun getScoreDelta (habit: Habit): Int{
+        var scoreDelta : Int
+        scoreDelta = habit.difficulty
+
+        when (habit.difficulty) {
+            easy -> scoreDelta = 2
+            medium -> scoreDelta = 3
+            hard -> scoreDelta = 5
+
+        }
+        return scoreDelta
+    }
+
     fun updateHabitScore(userId: Int, id: Int, habit: Habit) : Habit {
-        var scoreDelta = habit.difficulty
+
+        var scoreDelta = getScoreDelta(habit)
         var scoreCategory = getHabitColor(habit);
         var body = habit
         if (habit.habitType == good) {
@@ -144,10 +158,6 @@ class DefaultHabitDbRepository() : HabitDbRepository {
         return body
     }
 
-
-
-
-
     companion object {
         //Color
         const val red = 1
@@ -162,9 +172,9 @@ class DefaultHabitDbRepository() : HabitDbRepository {
         const val both = 3
 
         //Difficulty
-        const val easy = 2
-        const val medium = 3
-        const val hard = 5
+        const val easy = 1
+        const val medium = 2
+        const val hard = 3
     }
 }
 
