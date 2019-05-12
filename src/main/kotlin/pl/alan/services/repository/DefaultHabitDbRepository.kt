@@ -11,7 +11,7 @@ import pl.alan.services.model.Habit
 import javax.xml.ws.Response
 
 @Repository
-class DefaultHabitDbRepository() : HabitDbRepository {
+class DefaultHabitDbRepository() : HabitDbRepository{
 
 
     override fun createTable() = SchemaUtils.create(Habits)
@@ -137,19 +137,10 @@ class DefaultHabitDbRepository() : HabitDbRepository {
         var scoreDelta = getScoreDelta(habit)
         var scoreCategory = getHabitColor(habit);
         var body = habit
-        if (habit.habitType == good) {
-            when (scoreCategory) {
-                4 -> habit.score += scoreDelta / 2
-                5 -> habit.score += 1
-                else -> habit.score += scoreDelta
-            }
-        } else if (habit.habitType == bad) {
-            when (scoreCategory) {
-                2 -> habit.score -= scoreDelta * 1.5
-                1 -> habit.score -= scoreDelta * 2
-                else -> habit.score -= scoreDelta
-            }
-        }
+
+        var defaultScoreAlgorithm = DefaultScoreAlgorithm()
+        defaultScoreAlgorithm.updateScoreAlgorithm(scoreDelta, scoreCategory, body)
+
         transaction {
             body = update(habit.id!!, userId, habit)
         }
