@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.*
 import org.springframework.web.server.ResponseStatusException
 import pl.alan.services.model.Habit
 import pl.alan.services.repository.DefaultHabitDbRepository
+import org.springframework.http.ResponseEntity
+
+
 
 @RestController
 @RequestMapping //("/habits")
@@ -69,12 +72,12 @@ class HabitController {
 
     @PostMapping("/users/habits")
     @ApiResponses(
-            ApiResponse(code = 200, message = "Successful habit creation"),
+            ApiResponse(code = 201, message = "Successful habit creation"),
             ApiResponse(code = 400, message = "Incorrect json"),
             ApiResponse(code = 401, message = "Incorrect or empty userId"),
             ApiResponse(code = 500, message = "Server error")
     )
-    fun create(@RequestBody body: Habit, @RequestParam userId: Int) {
+    fun create(@RequestBody body: Habit, @RequestParam userId: Int) : ResponseEntity<Any> {
         var habito: Habit = body
         transaction {
             if (body != null) {
@@ -86,7 +89,7 @@ class HabitController {
             } else throw  ResponseStatusException(
                     HttpStatus.BAD_REQUEST, "Incorrect json");
         }
-
+        return ResponseEntity<Any>(HttpStatus.CREATED)
     }
 
     @GetMapping("/users/habits/{habitId}")
