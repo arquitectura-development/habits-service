@@ -45,6 +45,7 @@ class HabitController {
             }
 
 
+
     @GetMapping("/users/habits")
     @ApiResponses(
             ApiResponse(code = 200, message = "Successful operation"),
@@ -77,7 +78,7 @@ class HabitController {
     fun create(@RequestBody body: Habit, @RequestParam userId: Int) : ResponseEntity<Any> {
         var habito: Habit = body
         transaction {
-            if (body.name != null) {
+            if (body != null) {
                 if (userId != null) {
                     habito = repository.create(body)
 
@@ -148,7 +149,7 @@ class HabitController {
         var lista = listOf<Habit>()
 
         transaction {
-                if (body.id != null) {
+                if (body != null) {
                     if (userId != null) {
                         lista = repository.findByUserId(userId, habitId)
                         if (lista.isEmpty()){
