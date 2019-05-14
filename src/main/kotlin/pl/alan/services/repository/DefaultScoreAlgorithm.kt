@@ -9,7 +9,7 @@ import pl.alan.services.Habits.score
 open class DefaultScoreAlgorithm() : ScoreAlgorithm {
     override fun updateScoreAlgorithm(score: Double, scoreDelta: Int, scoreCategory: Int, positive: Boolean, habit: Habit): Double {
         habit.score = score
-        if (habit.habitType == DefaultHabitDbRepository.both )
+        if (habit.habitType == DefaultHabitDbRepository.BOTH)
             if (positive){
                 when (scoreCategory) {
                     4 -> habit.score += scoreDelta / 2
@@ -23,13 +23,13 @@ open class DefaultScoreAlgorithm() : ScoreAlgorithm {
                     else -> habit.score -= scoreDelta
                 }
             }
-        else if (habit.habitType == DefaultHabitDbRepository.good) {
+        else if (habit.habitType == DefaultHabitDbRepository.GOOD) {
             when (scoreCategory) {
                 4 -> habit.score += scoreDelta / 2
                 5 -> habit.score += 1
                 else -> habit.score += scoreDelta
             }
-        } else if (habit.habitType == DefaultHabitDbRepository.bad) {
+        } else if (habit.habitType == DefaultHabitDbRepository.BAD) {
             when (scoreCategory) {
                 2 -> habit.score -= scoreDelta * 1.5
                 1 -> habit.score -= scoreDelta * 2

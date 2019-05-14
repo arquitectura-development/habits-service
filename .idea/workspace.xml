@@ -2,48 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b8f3599-461d-46ac-bda2-e6adace4cd3a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/SampleSpringKotlinMicroserviceApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/SampleSpringKotlinMicroserviceApplication.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/controller/HabitController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/controller/HabitController.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/DefaultHabitDbRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/DefaultHabitDbRepository.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/DefaultScoreAlgorithm.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/DefaultScoreAlgorithm.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/HabitDbRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/HabitDbRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/HabitRepository.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/NewScoreAlgorithm.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/NewScoreAlgorithm.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/pl/alan/services/HabitControllerTests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/pl/alan/services/HabitControllerTests.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/alan/services/controller/HabitController$create$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/alan/services/controller/HabitController$create$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/alan/services/controller/HabitController$deleteById$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/alan/services/controller/HabitController$deleteById$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/alan/services/controller/HabitController$findByUserId$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/alan/services/controller/HabitController$findByUserId$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/alan/services/controller/HabitController$findByUserId$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/alan/services/controller/HabitController$updateScore$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/alan/services/controller/HabitController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/alan/services/controller/HabitController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/alan/services/repository/DefaultHabitDbRepository$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/alan/services/repository/DefaultHabitDbRepository$Companion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/alan/services/repository/DefaultHabitDbRepository$deleteById$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/alan/services/repository/DefaultHabitDbRepository$deleteById$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/alan/services/repository/DefaultHabitDbRepository$toRow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/alan/services/repository/DefaultHabitDbRepository$toRow$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/alan/services/repository/DefaultHabitDbRepository$update$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/alan/services/repository/DefaultHabitDbRepository$update$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/alan/services/repository/DefaultHabitDbRepository$update$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/alan/services/repository/DefaultHabitDbRepository$update$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/alan/services/repository/DefaultHabitDbRepository$updateHabitScore$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/alan/services/repository/DefaultHabitDbRepository$updateHabitScore$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/alan/services/repository/DefaultHabitDbRepository$updateHabitScore$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/alan/services/repository/DefaultHabitDbRepository$updateHabitScore$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/alan/services/repository/DefaultHabitDbRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/alan/services/repository/DefaultHabitDbRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/alan/services/repository/DefaultScoreAlgorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/alan/services/repository/DefaultScoreAlgorithm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/alan/services/repository/HabitDbRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/alan/services/repository/HabitDbRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/alan/services/repository/HabitRepository$removeById$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/alan/services/repository/HabitRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/alan/services/repository/NewScoreAlgorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/alan/services/repository/NewScoreAlgorithm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/pl/alan/services/HabitControllerTests$test1AddHabit$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/pl/alan/services/HabitControllerTests$test1AddHabit$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/pl/alan/services/HabitControllerTests$test2UpdateHabit$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/pl/alan/services/HabitControllerTests$test2UpdateHabit$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/pl/alan/services/HabitControllerTests$test3GetHabitByID$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/pl/alan/services/HabitControllerTests$test3GetHabitByID$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/pl/alan/services/HabitControllerTests$test4DeleteHabit$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/pl/alan/services/HabitControllerTests$test5GetHabits$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/pl/alan/services/HabitControllerTests$test5GetHabits$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/pl/alan/services/HabitControllerTests$test5GetHabits$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/pl/alan/services/HabitControllerTests$test5GetHabits$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/pl/alan/services/HabitControllerTests$test5GetHabits$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/pl/alan/services/HabitControllerTests$test5GetHabits$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/pl/alan/services/HabitControllerTests$test6GetHabitColor$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/pl/alan/services/HabitControllerTests$test6GetHabitColor$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/pl/alan/services/HabitControllerTests$test7UpdateHabitScoreType1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/pl/alan/services/HabitControllerTests$test7UpdateHabitScoreType1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/pl/alan/services/HabitControllerTests$test8UpdateHabitScoreType2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/pl/alan/services/HabitControllerTests$test8UpdateHabitScoreType2$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/pl/alan/services/HabitControllerTests$test9UpdateHabitScoreType3$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/pl/alan/services/HabitControllerTests$test9UpdateHabitScoreType3$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/pl/alan/services/HabitControllerTests$test9UpdateHabitScoreType3$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/pl/alan/services/HabitControllerTests$test9UpdateHabitScoreType3$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/pl/alan/services/HabitControllerTests$test9ZDeleteHabits$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/pl/alan/services/HabitControllerTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/pl/alan/services/HabitControllerTests.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -55,6 +18,115 @@
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/kotlin/pl/alan/services/HabitControllerTests.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-19">
+              <caret line="123" column="5" selection-start-line="123" selection-start-column="5" selection-end-line="123" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/DefaultHabitDbRepository.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="239">
+              <caret line="192" column="28" lean-forward="true" selection-start-line="192" selection-start-column="28" selection-end-line="192" selection-end-column="28" />
+              <folding>
+                <element signature="e#37#422#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/CrudRepository.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="18" selection-start-line="5" selection-start-column="3" selection-end-line="8" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/alan/services/model/Habit.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="140" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="143" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/DefaultScoreAlgorithm.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="31" column="66" selection-start-line="31" selection-start-column="66" selection-end-line="31" selection-end-column="66" />
+              <folding>
+                <element signature="e#37#140#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/NewScoreAlgorithm.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="27" column="66" selection-start-line="27" selection-start-column="66" selection-end-line="27" selection-end-column="66" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/alan/services/SampleSpringKotlinMicroserviceApplication.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="117">
+              <caret line="13" column="71" lean-forward="true" selection-start-line="13" selection-start-column="71" selection-end-line="13" selection-end-column="71" />
+              <folding>
+                <element signature="e#27#234#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/HabitDbRepository.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="45" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/alan/services/controller/HabitController.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="140" column="46" selection-start-line="140" selection-start-column="46" selection-end-line="140" selection-end-column="46" />
+              <folding>
+                <element signature="e#37#577#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/alan/services/config/SwaggerConfig.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="732">
+              <caret line="54" column="49" lean-forward="true" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="49" />
+              <folding>
+                <element signature="e#33#1012#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -78,6 +150,9 @@
       <find>json</find>
       <find>findb</find>
       <find>findus</find>
+      <find>RED</find>
+      <find>ORAN</find>
+      <find>YELLOW</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\A01630612\Desktop\Habits-architecture</dir>
@@ -104,14 +179,14 @@
         <option value="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/config/SwaggerConfig.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/CrudRepository.kt" />
         <option value="$PROJECT_DIR$/readme.md" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/SampleSpringKotlinMicroserviceApplication.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/ScoreAlgorithm.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/HabitDbRepository.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/DefaultHabitDbRepository.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/NewScoreAlgorithm.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/DefaultScoreAlgorithm.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/controller/HabitController.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/pl/alan/services/HabitControllerTests.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/controller/HabitController.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/SampleSpringKotlinMicroserviceApplication.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/DefaultHabitDbRepository.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/DefaultScoreAlgorithm.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/NewScoreAlgorithm.kt" />
       </list>
     </option>
   </component>
@@ -261,7 +336,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.HabitControllerTests (1)">
+  <component name="RunManager" selected="Kotlin.pl.alan.services.SampleSpringKotlinMicroserviceApplicationKt">
     <configuration name="HabitControllerTests (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sample-spring-kotlin-microservice" />
       <extension name="coverage">
@@ -352,8 +427,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.HabitControllerTests (1)" />
         <item itemvalue="Kotlin.pl.alan.services.SampleSpringKotlinMicroserviceApplicationKt" />
+        <item itemvalue="JUnit.HabitControllerTests (1)" />
         <item itemvalue="JUnit.HabitControllerTests" />
         <item itemvalue="JUnit.HabitControllerTests.test1AddHabit" />
         <item itemvalue="JUnit.PersonControllerTests" />
@@ -379,20 +454,11 @@
       <workItem from="1557562174259" duration="660000" />
       <workItem from="1557563333678" duration="53102000" />
       <workItem from="1557804681186" duration="1983000" />
-      <workItem from="1557807548676" duration="24338000" />
+      <workItem from="1557807548676" duration="28692000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="HabitControllerTests_(1) - 2019.05.14 at 11h 28m 06s.xml">
-      <configuration name="HabitControllerTests (1)" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="HabitControllerTests_(1) - 2019.05.14 at 11h 28m 36s.xml">
-      <configuration name="HabitControllerTests (1)" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="HabitControllerTests_(1) - 2019.05.14 at 11h 29m 38s.xml">
-      <configuration name="HabitControllerTests (1)" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="HabitControllerTests_(1) - 2019.05.14 at 11h 30m 02s.xml">
       <configuration name="HabitControllerTests (1)" configurationId="JUnit" />
     </history-entry>
@@ -414,22 +480,31 @@
     <history-entry file="HabitControllerTests_(1) - 2019.05.14 at 14h 56m 49s.xml">
       <configuration name="HabitControllerTests (1)" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="HabitControllerTests_(1) - 2019.05.14 at 16h 04m 02s.xml">
+      <configuration name="HabitControllerTests (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="HabitControllerTests_(1) - 2019.05.14 at 16h 10m 17s.xml">
+      <configuration name="HabitControllerTests (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="HabitControllerTests_(1) - 2019.05.14 at 16h 10m 49s.xml">
+      <configuration name="HabitControllerTests (1)" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130179000" />
+    <option name="totallyTimeSpent" value="134533000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.34754798" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26172706" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.37919825" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.37919825" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />

@@ -96,23 +96,23 @@ class DefaultHabitDbRepository() : HabitDbRepository {
     override fun getHabitColor(habit: Habit): Int {
         when {
             habit.score < 0 -> {
-                habit.color = red;
+                habit.color = RED;
                 return habit.color
             }
             habit.score in 0..9 -> {
-                habit.color = orange;
+                habit.color = ORANGE;
                 return habit.color
             }
             habit.score in 10..39 -> {
-                habit.color = yellow;
+                habit.color = YELLOW;
                 return habit.color
             }
             habit.score in 40..49 -> {
-                habit.color = green;
+                habit.color = GREEN;
                 return habit.color
             }
             50 <= habit.score -> {
-                habit.color = blue;
+                habit.color = BLUE;
                 return habit.color
             }
             else -> return 0
@@ -124,9 +124,9 @@ class DefaultHabitDbRepository() : HabitDbRepository {
         scoreDelta = habit.difficulty
 
         when (habit.difficulty) {
-            easy -> scoreDelta = 2
-            medium -> scoreDelta = 3
-            hard -> scoreDelta = 5
+            EASY -> scoreDelta = 2
+            MEDIUM -> scoreDelta = 3
+            HARD -> scoreDelta = 5
 
         }
         return scoreDelta
@@ -150,7 +150,7 @@ class DefaultHabitDbRepository() : HabitDbRepository {
         return body
     }
 
-    override fun getScore (userId: Int, id: Int): Double {
+    override fun getScore(userId: Int, id: Int): Double {
 
         var list = Habits.select {((Habits.id eq id) and (Habits.userId eq userId))}.map {
             fromRow(it)
@@ -159,7 +159,7 @@ class DefaultHabitDbRepository() : HabitDbRepository {
 
     }
 
-    override fun getDifficulty (userId: Int, id: Int): Int {
+    override fun getDifficulty(userId: Int, id: Int): Int {
 
         var list = Habits.select {((Habits.id eq id) and (Habits.userId eq userId))}.map {
             fromRow(it)
@@ -168,7 +168,7 @@ class DefaultHabitDbRepository() : HabitDbRepository {
 
     }
 
-    override fun getHabitType (userId: Int, id: Int): Int {
+    override fun getHabitType(userId: Int, id: Int): Int {
 
         var list = Habits.select {((Habits.id eq id) and (Habits.userId eq userId))}.map {
             fromRow(it)
@@ -188,21 +188,21 @@ class DefaultHabitDbRepository() : HabitDbRepository {
 
     companion object {
         //Color
-        const val red = 1
-        const val orange = 2
-        const val yellow = 3
-        const val green = 4
-        const val blue = 5
+        const val RED = 1
+        const val ORANGE = 2
+        const val YELLOW = 3
+        const val GREEN = 4
+        const val BLUE = 5
 
         //Type
-        const val good = 1
-        const val bad = 2
-        const val both = 3
+        const val GOOD = 1
+        const val BAD = 2
+        const val BOTH = 3
 
         //Difficulty
-        const val easy = 1
-        const val medium = 2
-        const val hard = 3
+        const val EASY = 1
+        const val MEDIUM = 2
+        const val HARD = 3
     }
 }
 

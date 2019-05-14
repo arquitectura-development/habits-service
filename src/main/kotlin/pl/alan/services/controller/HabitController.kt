@@ -73,7 +73,7 @@ class HabitController {
             ApiResponse(code = 401, message = "Incorrect or empty userId"),
             ApiResponse(code = 500, message = "Server error")
     )
-    fun create(@RequestBody body: Habit, @RequestParam userId: Int) : ResponseEntity<Any> {
+    fun create(@RequestBody body: Habit, @RequestParam userId: Int): ResponseEntity<Any> {
         var habito: Habit = body
         transaction {
             if (body != null) {
