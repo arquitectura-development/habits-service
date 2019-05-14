@@ -44,8 +44,6 @@ class HabitController {
                         HttpStatus.UNAUTHORIZED, "Incorrect or empty userId");
             }
 
-
-
     @GetMapping("/users/habits")
     @ApiResponses(
             ApiResponse(code = 200, message = "Successful operation"),
@@ -97,17 +95,15 @@ class HabitController {
             ApiResponse(code = 404, message = "Habit or user not found"),
             ApiResponse(code = 500, message = "Server error")
     )
-    fun findByUserId(@RequestParam userId: Int, @PathVariable habitId: Int): List<Habit> {
+    fun findByUserHabitId(@RequestParam userId: Int, @PathVariable habitId: Int): List<Habit> {
         var lista = listOf<Habit>()
         transaction{
             if (userId != null) {
-                lista = repository.findByUserId(userId, habitId)
-                if (lista.isEmpty()){
-                    throw  ResponseStatusException(
-                        HttpStatus.NOT_FOUND, "Habit or user not found");
+                lista = repository.findByUserHabitId(userId, habitId)
+                if (lista.isEmpty()) {
+                    throw  ResponseStatusException(HttpStatus.NOT_FOUND, "Habit or user not found");
                 }
-            }
-            else throw  ResponseStatusException(
+            } else throw  ResponseStatusException(
                     HttpStatus.UNAUTHORIZED, "Incorrect or empty userId");
         }
         return lista
@@ -130,7 +126,7 @@ class HabitController {
                     throw  ResponseStatusException(
                             HttpStatus.NOT_FOUND, "Habit or user not found")
                 }
-            }else throw  ResponseStatusException(
+            } else throw  ResponseStatusException(
                     HttpStatus.UNAUTHORIZED, "Incorrect or empty userId");
         }
     }
@@ -144,34 +140,25 @@ class HabitController {
             ApiResponse(code = 404, message = "Habit or user not found"),
             ApiResponse(code = 500, message = "Server error")
     )
-    fun updateScore(@PathVariable habitId: Int, @RequestParam userId: Int, @RequestParam (required = false) positive: Boolean, @RequestParam (required = false)updateScore: Boolean , @RequestBody body: Habit): Habit {
+    fun update(@PathVariable habitId: Int, @RequestParam userId: Int, @RequestParam(required = false) positive: Boolean, @RequestParam(required = false) updateScore: Boolean, @RequestBody body: Habit): Habit {
         var habito : Habit = body
         var lista = listOf<Habit>()
 
         transaction {
-                if (body != null) {
-                    if (userId != null) {
-                        lista = repository.findByUserId(userId, habitId)
-                        if (lista.isEmpty()){
-                            throw  ResponseStatusException(
-                                    HttpStatus.NOT_FOUND, "Habit or user not found");
-                        }
-                        else{
-                            if (updateScore == true)
-                                habito = repository.updateHabitScore(userId, habitId, positive, body)
-                            else
-                                habito = repository.update(userId, habitId, body)
-                            //repository.update(userId, habitId, body)
-
-                        }
+            if (body != null) {
+                if (userId != null) {
+                    lista = repository.findByUserHabitId(userId, habitId)
+                    if (lista.isEmpty()){
+                        throw  ResponseStatusException(HttpStatus.NOT_FOUND, "Habit or user not found");
+                    } else {
+                        if (updateScore)
+                            habito = repository.updateHabitScore(userId, habitId, positive, body)
+                        else
+                            habito = repository.update(userId, habitId, body)
                     }
-                    else throw  ResponseStatusException(
-                            HttpStatus.UNAUTHORIZED, "Incorrect userID");
-                }
-                else throw  ResponseStatusException(
-                        HttpStatus.BAD_REQUEST, "Incorrect json");
-
-            }
+                } else throw  ResponseStatusException(HttpStatus.UNAUTHORIZED, "Incorrect userID");
+            } else throw  ResponseStatusException(HttpStatus.BAD_REQUEST, "Incorrect json");
+        }
         return habito
     }
 }

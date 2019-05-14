@@ -11,7 +11,7 @@ import pl.alan.services.model.Habit
 import javax.xml.ws.Response
 
 @Repository
-class DefaultHabitDbRepository() : HabitDbRepository{
+class DefaultHabitDbRepository() : HabitDbRepository {
 
 
     override fun createTable() = SchemaUtils.create(Habits)
@@ -21,13 +21,19 @@ class DefaultHabitDbRepository() : HabitDbRepository{
         return habit
     }
 
-    fun update(userId: Int, id: Int, habit: Habit): Habit {
-        if(habit.difficulty == 0 ) { habit.difficulty = getDifficulty(userId, id)}
-        if(habit.habitType == 0 ){ habit.habitType = getHabitType(userId, id)}
-        if(habit.score == 0.0 ) { habit.score = getScore(userId, id)}
+    override fun update(userId: Int, id: Int, habit: Habit): Habit {
+        if (habit.difficulty == 0) {
+            habit.difficulty = getDifficulty(userId, id)
+        }
+        if (habit.habitType == 0) {
+            habit.habitType = getHabitType(userId, id)
+        }
+        if (habit.score == 0.0) {
+            habit.score = getScore(userId, id)
+        }
         habit.color = getColor(userId, id)
 
-        Habits.update({((Habits.id eq id) and (Habits.userId eq userId))}){
+        Habits.update({ ((Habits.id eq id) and (Habits.userId eq userId)) }) {
             it[name] = habit.name
             it[habitType] = habit.habitType
             it[difficulty] = habit.difficulty
@@ -41,13 +47,13 @@ class DefaultHabitDbRepository() : HabitDbRepository{
 
             if (userId == 0)
                 Habits.selectAll().map {
-                fromRow(it)
-            }else {
-                Habits.select {(Habits.userId eq userId)}.map {
                     fromRow(it)
+                }
+            else {
+                Habits.select { (Habits.userId eq userId) }.map {
+                    fromRow(it)
+                }
             }
-    }
-
 
 
     override fun deleteAll() = Habits.deleteAll()
@@ -74,31 +80,20 @@ class DefaultHabitDbRepository() : HabitDbRepository{
                     r[Habits.color])
 
 
-    private fun connectDatabase (){
-        Database.connect("jdbc:mysql://127.0.0.1:3306/habits", driver = "com.mysql.jdbc.Driver")
-
-    }
-
-    fun findByUserId(userId: Int): List<Habit> =
-                Habits.select {(Habits.userId eq userId)}.map {
-                    fromRow(it)
-                }
-
-    fun findByUserId(userId: Int, id: Int): List<Habit> =
-            Habits.select {((Habits.id eq id) and (Habits.userId eq userId))}.map {
-                fromRow(it)
-            }
-
-    fun findUser(userId: Int): List <Habit> =
+    override fun findByUserId(userId: Int): List<Habit> =
             Habits.select {(Habits.userId eq userId)}.map {
                 fromRow(it)
             }
 
+    override fun findByUserHabitId(userId: Int, id: Int): List<Habit> =
+            Habits.select {((Habits.id eq id) and (Habits.userId eq userId))}.map {
+                fromRow(it)
+            }
 
-    fun deleteById(userId: Int ,id: Int) =
+    override fun deleteById(userId: Int ,id: Int) =
             Habits.deleteWhere {((Habits.id eq id) and  (Habits.userId eq userId))}
 
-    fun getHabitColor(habit: Habit): Int {
+    override fun getHabitColor(habit: Habit): Int {
         when {
             habit.score < 0 -> {
                 habit.color = red;
@@ -124,7 +119,7 @@ class DefaultHabitDbRepository() : HabitDbRepository{
         }
     }
 
-    fun getScoreDelta (habit: Habit): Int{
+    override fun getScoreDelta (habit: Habit): Int{
         var scoreDelta : Int
         scoreDelta = habit.difficulty
 
@@ -137,7 +132,7 @@ class DefaultHabitDbRepository() : HabitDbRepository{
         return scoreDelta
     }
 
-    fun updateHabitScore(userId: Int, id: Int, positive : Boolean, habit: Habit) : Habit {
+    override fun updateHabitScore(userId: Int, id: Int, positive : Boolean, habit: Habit) : Habit {
         habit.score = getScore(userId, id)
         habit.difficulty = getDifficulty(userId, id)
         habit.habitType = getHabitType(userId, id)
@@ -155,16 +150,16 @@ class DefaultHabitDbRepository() : HabitDbRepository{
         return body
     }
 
-    fun getScore (userId: Int, id: Int): Double {
+    override fun getScore (userId: Int, id: Int): Double {
 
-           var list = Habits.select {((Habits.id eq id) and (Habits.userId eq userId))}.map {
+        var list = Habits.select {((Habits.id eq id) and (Habits.userId eq userId))}.map {
             fromRow(it)
         }
         return list[0].score
 
     }
 
-    fun getDifficulty (userId: Int, id: Int): Int {
+    override fun getDifficulty (userId: Int, id: Int): Int {
 
         var list = Habits.select {((Habits.id eq id) and (Habits.userId eq userId))}.map {
             fromRow(it)
@@ -173,7 +168,7 @@ class DefaultHabitDbRepository() : HabitDbRepository{
 
     }
 
-    fun getHabitType (userId: Int, id: Int): Int {
+    override fun getHabitType (userId: Int, id: Int): Int {
 
         var list = Habits.select {((Habits.id eq id) and (Habits.userId eq userId))}.map {
             fromRow(it)
@@ -182,7 +177,7 @@ class DefaultHabitDbRepository() : HabitDbRepository{
 
     }
 
-    fun getColor (userId: Int, id: Int): Int {
+    override fun getColor (userId: Int, id: Int): Int {
 
         var list = Habits.select {((Habits.id eq id) and (Habits.userId eq userId))}.map {
             fromRow(it)

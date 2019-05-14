@@ -16,8 +16,7 @@ open class DefaultScoreAlgorithm() : ScoreAlgorithm {
                     5 -> habit.score += 1
                     else -> habit.score += scoreDelta
                 }
-            }
-            else  {
+            } else {
                 when (scoreCategory) {
                     2 -> habit.score -= scoreDelta * 1.5
                     1 -> habit.score -= scoreDelta * 2
