@@ -77,7 +77,7 @@ class HabitController {
     fun create(@RequestBody body: Habit, @RequestParam userId: Int) : ResponseEntity<Any> {
         var habito: Habit = body
         transaction {
-            if (body.id != null) {
+            if (body.name != null) {
                 if (userId != null) {
                     habito = repository.create(body)
 

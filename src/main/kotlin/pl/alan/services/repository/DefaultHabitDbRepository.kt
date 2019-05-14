@@ -142,7 +142,7 @@ class DefaultHabitDbRepository() : HabitDbRepository{
         defaultScoreAlgorithm.updateScoreAlgorithm(scoreDelta, scoreCategory, body)
 
         transaction {
-            body = update(habit.id!!, userId, habit)
+            body = update(userId, id, habit)
         }
         return body
     }
