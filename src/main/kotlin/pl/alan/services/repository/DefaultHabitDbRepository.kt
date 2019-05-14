@@ -22,9 +22,9 @@ class DefaultHabitDbRepository() : HabitDbRepository{
     }
 
     fun update(userId: Int, id: Int, habit: Habit): Habit {
-        habit.difficulty = getDifficulty(userId, id)
-        habit.habitType = getHabitType(userId, id)
-        habit.score = getScore(userId, id)
+        if(habit.difficulty == 0 ) { habit.difficulty = getDifficulty(userId, id)}
+        if(habit.habitType == 0 ){ habit.habitType = getHabitType(userId, id)}
+        if(habit.score == null ) { habit.score = getScore(userId, id)}
         habit.color = getColor(userId, id)
 
         Habits.update({((Habits.id eq id) and (Habits.userId eq userId))}){
@@ -137,7 +137,7 @@ class DefaultHabitDbRepository() : HabitDbRepository{
         return scoreDelta
     }
 
-    fun updateHabitScore(userId: Int, id: Int, habit: Habit) : Habit {
+    fun updateHabitScore(userId: Int, id: Int, positive : Boolean, habit: Habit) : Habit {
         habit.score = getScore(userId, id)
         habit.difficulty = getDifficulty(userId, id)
         habit.habitType = getHabitType(userId, id)
@@ -147,7 +147,7 @@ class DefaultHabitDbRepository() : HabitDbRepository{
         var body = habit
 
         var defaultScoreAlgorithm = DefaultScoreAlgorithm()
-        defaultScoreAlgorithm.updateScoreAlgorithm(habit.score, scoreDelta, scoreCategory, body)
+        defaultScoreAlgorithm.updateScoreAlgorithm(habit.score, scoreDelta, scoreCategory, positive, body)
 
         Habits.update({((Habits.id eq id) and (Habits.userId eq userId))}){
             it[score] = habit.score
