@@ -144,7 +144,7 @@ class HabitController {
             ApiResponse(code = 404, message = "Habit or user not found"),
             ApiResponse(code = 500, message = "Server error")
     )
-    fun update(@PathVariable habitId: Int, @RequestParam userId: Int, @RequestBody body: Habit): Habit {
+    fun updateScore(@PathVariable habitId: Int, @RequestParam userId: Int, @RequestParam (required = false)updateScore: Boolean , @RequestBody body: Habit): Habit {
         var habito : Habit = body
         var lista = listOf<Habit>()
 
@@ -157,7 +157,10 @@ class HabitController {
                                     HttpStatus.NOT_FOUND, "Habit or user not found");
                         }
                         else{
-                            habito = repository.updateHabitScore(userId, habitId, body)
+                            if (updateScore == true)
+                                habito = repository.updateHabitScore(userId, habitId, body)
+                            else
+                                habito = repository.update(userId, habitId, body)
                             //repository.update(userId, habitId, body)
 
                         }

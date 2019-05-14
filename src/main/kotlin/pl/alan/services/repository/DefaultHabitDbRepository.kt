@@ -22,6 +22,11 @@ class DefaultHabitDbRepository() : HabitDbRepository{
     }
 
     fun update(userId: Int, id: Int, habit: Habit): Habit {
+        habit.difficulty = getDifficulty(userId, id)
+        habit.habitType = getHabitType(userId, id)
+        habit.score = getScore(userId, id)
+        habit.color = getColor(userId, id)
+
         Habits.update({((Habits.id eq id) and (Habits.userId eq userId))}){
             it[name] = habit.name
             it[habitType] = habit.habitType
@@ -153,6 +158,33 @@ class DefaultHabitDbRepository() : HabitDbRepository{
             fromRow(it)
         }
         return list[0].score
+
+    }
+
+    fun getDifficulty (userId: Int, id: Int): Int {
+
+        var list = Habits.select {((Habits.id eq id) and (Habits.userId eq userId))}.map {
+            fromRow(it)
+        }
+        return list[0].difficulty
+
+    }
+
+    fun getHabitType (userId: Int, id: Int): Int {
+
+        var list = Habits.select {((Habits.id eq id) and (Habits.userId eq userId))}.map {
+            fromRow(it)
+        }
+        return list[0].habitType
+
+    }
+
+    fun getColor (userId: Int, id: Int): Int {
+
+        var list = Habits.select {((Habits.id eq id) and (Habits.userId eq userId))}.map {
+            fromRow(it)
+        }
+        return list[0].color
 
     }
 
