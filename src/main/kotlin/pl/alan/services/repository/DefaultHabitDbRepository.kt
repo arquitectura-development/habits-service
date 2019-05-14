@@ -139,6 +139,9 @@ class DefaultHabitDbRepository() : HabitDbRepository{
 
     fun updateHabitScore(userId: Int, id: Int, habit: Habit) : Habit {
         habit.score = getScore(userId, id)
+        habit.difficulty = getDifficulty(userId, id)
+        habit.habitType = getHabitType(userId, id)
+        habit.color = getColor(userId, id)
         var scoreDelta = getScoreDelta(habit)
         var scoreCategory = getHabitColor(habit);
         var body = habit

@@ -3,7 +3,7 @@ package pl.alan.services.repository
 import pl.alan.services.model.Habit
 
 class NewScoreAlgorithm() : ScoreAlgorithm {
-    override fun updateScoreAlgorithm(score: Double, scoreDelta: Int, scoreCategory: Int, habit: Habit): Habit {
+    override fun updateScoreAlgorithm(score: Double, scoreDelta: Int, scoreCategory: Int, habit: Habit): Double {
         habit.score = score
         if (habit.habitType == DefaultHabitDbRepository.good) {
             when (scoreCategory) {
@@ -18,6 +18,6 @@ class NewScoreAlgorithm() : ScoreAlgorithm {
                 else -> habit.score -= scoreDelta
             }
         }
-        return habit
+        return habit.score
     }
 }

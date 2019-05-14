@@ -6,7 +6,7 @@ import pl.alan.services.Habits.score
 
 
 open class DefaultScoreAlgorithm() : ScoreAlgorithm {
-    override fun updateScoreAlgorithm(score: Double, scoreDelta: Int, scoreCategory: Int, habit: Habit): Habit {
+    override fun updateScoreAlgorithm(score: Double, scoreDelta: Int, scoreCategory: Int, habit: Habit): Double {
         habit.score = score
         if (habit.habitType == DefaultHabitDbRepository.good) {
             when (scoreCategory) {
@@ -21,6 +21,6 @@ open class DefaultScoreAlgorithm() : ScoreAlgorithm {
                 else -> habit.score -= scoreDelta
             }
         }
-        return habit
+        return habit.score
     }
 }
