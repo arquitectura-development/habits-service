@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b8f3599-461d-46ac-bda2-e6adace4cd3a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/controller/HabitController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/controller/HabitController.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/DefaultHabitDbRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/DefaultHabitDbRepository.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
@@ -27,11 +26,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/DefaultHabitDbRepository.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-102">
-              <caret line="27" column="42" lean-forward="true" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
+            <state relative-caret-position="284">
+              <caret line="148" column="75" selection-start-line="148" selection-start-column="75" selection-end-line="148" selection-end-column="75" />
               <folding>
                 <element signature="e#37#422#0" expanded="true" />
               </folding>
@@ -111,7 +110,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/alan/services/controller/HabitController.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="661">
@@ -445,7 +444,7 @@
       <workItem from="1557562174259" duration="660000" />
       <workItem from="1557563333678" duration="53102000" />
       <workItem from="1557804681186" duration="1983000" />
-      <workItem from="1557807548676" duration="5825000" />
+      <workItem from="1557807548676" duration="7166000" />
     </task>
     <servers />
   </component>
@@ -482,7 +481,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111666000" />
+    <option name="totallyTimeSpent" value="113007000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -667,22 +666,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/DefaultHabitDbRepository.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102">
-          <caret line="27" column="42" lean-forward="true" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
-          <folding>
-            <element signature="e#37#422#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/alan/services/controller/HabitController.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="661">
           <caret line="175" column="5" selection-start-line="175" selection-start-column="5" selection-end-line="175" selection-end-column="5" />
           <folding>
             <element signature="e#37#577#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/DefaultHabitDbRepository.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="148" column="75" selection-start-line="148" selection-start-column="75" selection-end-line="148" selection-end-column="75" />
+          <folding>
+            <element signature="e#37#422#0" expanded="true" />
           </folding>
         </state>
       </provider>

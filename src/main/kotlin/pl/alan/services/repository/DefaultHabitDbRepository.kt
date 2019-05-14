@@ -138,16 +138,16 @@ class DefaultHabitDbRepository() : HabitDbRepository{
     }
 
     fun updateHabitScore(userId: Int, id: Int, habit: Habit) : Habit {
-        var score = getScore(userId, id)
+        habit.score = getScore(userId, id)
         var scoreDelta = getScoreDelta(habit)
         var scoreCategory = getHabitColor(habit);
         var body = habit
 
         var defaultScoreAlgorithm = DefaultScoreAlgorithm()
-        defaultScoreAlgorithm.updateScoreAlgorithm(score, scoreDelta, scoreCategory, body)
+        defaultScoreAlgorithm.updateScoreAlgorithm(habit.score, scoreDelta, scoreCategory, body)
 
-        transaction {
-            body = update(userId, id, habit)
+        Habits.update({((Habits.id eq id) and (Habits.userId eq userId))}){
+            it[score] = habit.score
         }
         return body
     }
