@@ -1,6 +1,7 @@
 package pl.alan.services
 
 import org.jetbrains.exposed.sql.Database
+import org.jetbrains.exposed.sql.SchemaUtils
 import org.jetbrains.exposed.sql.transactions.transaction
 import org.junit.Assert
 import org.junit.FixMethodOrder
@@ -28,7 +29,10 @@ class HabitControllerTests {
 
     @Test
     fun test1AddHabit() {
-        Database.connect("jdbc:mysql://127.0.0.1:3306/habits", driver = "com.mysql.jdbc.Driver")
+        Database.connect("jdbc:mysql://sql3.freemysqlhosting.net/sql3291433", driver = "com.mysql.jdbc.Driver",
+                user = "sql3291433", password = "p9j5YyqdNy")
+
+        //override repository.createTable() = SchemaUtils.create(Pruebas)
         var habit = Habit(1, 1, "Do Clean Code", habitType = 1, difficulty = 2 , score = 2.0, color = 1)
         habit = transaction {
             repository.create(habit)
@@ -57,7 +61,7 @@ class HabitControllerTests {
         var lista  = listOf<Habit>()
 
         lista = transaction {
-            repository.findByUserId(2, 1)
+            repository.findByUserId(184, 1)
         }
         Assert.assertEquals(1 , lista.size)
 

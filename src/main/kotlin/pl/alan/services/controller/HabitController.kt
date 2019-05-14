@@ -77,7 +77,7 @@ class HabitController {
     fun create(@RequestBody body: Habit, @RequestParam userId: Int) : ResponseEntity<Any> {
         var habito: Habit = body
         transaction {
-            if (body != null) {
+            if (body.id != null) {
                 if (userId != null) {
                     habito = repository.create(body)
 
@@ -148,7 +148,7 @@ class HabitController {
         var lista = listOf<Habit>()
 
         transaction {
-                if (body != null) {
+                if (body.id != null) {
                     if (userId != null) {
                         lista = repository.findByUserId(userId, habitId)
                         if (lista.isEmpty()){
