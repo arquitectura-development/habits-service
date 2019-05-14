@@ -133,18 +133,27 @@ class DefaultHabitDbRepository() : HabitDbRepository{
     }
 
     fun updateHabitScore(userId: Int, id: Int, habit: Habit) : Habit {
-
+        var score = getScore(userId, id)
         var scoreDelta = getScoreDelta(habit)
         var scoreCategory = getHabitColor(habit);
         var body = habit
 
         var defaultScoreAlgorithm = DefaultScoreAlgorithm()
-        defaultScoreAlgorithm.updateScoreAlgorithm(scoreDelta, scoreCategory, body)
+        defaultScoreAlgorithm.updateScoreAlgorithm(score, scoreDelta, scoreCategory, body)
 
         transaction {
             body = update(userId, id, habit)
         }
         return body
+    }
+
+    fun getScore (userId: Int, id: Int): Double {
+
+           var list = Habits.select {((Habits.id eq id) and (Habits.userId eq userId))}.map {
+            fromRow(it)
+        }
+        return list[0].score
+
     }
 
     companion object {

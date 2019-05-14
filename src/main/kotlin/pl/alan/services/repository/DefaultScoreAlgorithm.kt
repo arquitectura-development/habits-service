@@ -1,9 +1,13 @@
 package pl.alan.services.repository
 
 import pl.alan.services.model.Habit
+import pl.alan.services.Habits
+import pl.alan.services.Habits.score
+
 
 open class DefaultScoreAlgorithm() : ScoreAlgorithm {
-    override fun updateScoreAlgorithm(scoreDelta: Int, scoreCategory: Int, habit: Habit): Habit {
+    override fun updateScoreAlgorithm(score: Double, scoreDelta: Int, scoreCategory: Int, habit: Habit): Habit {
+        habit.score = score
         if (habit.habitType == DefaultHabitDbRepository.good) {
             when (scoreCategory) {
                 4 -> habit.score += scoreDelta / 2
