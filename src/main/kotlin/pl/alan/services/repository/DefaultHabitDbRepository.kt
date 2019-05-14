@@ -24,7 +24,7 @@ class DefaultHabitDbRepository() : HabitDbRepository{
     fun update(userId: Int, id: Int, habit: Habit): Habit {
         if(habit.difficulty == 0 ) { habit.difficulty = getDifficulty(userId, id)}
         if(habit.habitType == 0 ){ habit.habitType = getHabitType(userId, id)}
-        if(habit.score == null ) { habit.score = getScore(userId, id)}
+        if(habit.score == 0.0 ) { habit.score = getScore(userId, id)}
         habit.color = getColor(userId, id)
 
         Habits.update({((Habits.id eq id) and (Habits.userId eq userId))}){
