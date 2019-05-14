@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b8f3599-461d-46ac-bda2-e6adace4cd3a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/DefaultHabitDbRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/DefaultHabitDbRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/DefaultScoreAlgorithm.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/DefaultScoreAlgorithm.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/NewScoreAlgorithm.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/NewScoreAlgorithm.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/pl/alan/services/HabitControllerTests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/pl/alan/services/HabitControllerTests.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -20,17 +22,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/kotlin/pl/alan/services/HabitControllerTests.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="130" column="47" selection-start-line="130" selection-start-column="47" selection-end-line="130" selection-end-column="47" />
+            <state relative-caret-position="355">
+              <caret line="155" column="29" selection-start-line="155" selection-start-column="29" selection-end-line="155" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/alan/services/model/Habit.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/DefaultHabitDbRepository.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+            <state relative-caret-position="158">
+              <caret line="143" column="19" selection-start-line="143" selection-start-column="14" selection-end-line="143" selection-end-column="19" />
               <folding>
                 <element signature="e#37#422#0" expanded="true" />
               </folding>
@@ -59,8 +70,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/DefaultScoreAlgorithm.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+            <state relative-caret-position="136">
+              <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
               <folding>
                 <element signature="e#37#140#0" expanded="true" />
               </folding>
@@ -69,22 +80,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/readme.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="68">
-                <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/NewScoreAlgorithm.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="109" selection-start-line="5" selection-start-column="109" selection-end-line="5" selection-end-column="109" />
+            <state relative-caret-position="187">
+              <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -92,8 +91,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/alan/services/SampleSpringKotlinMicroserviceApplication.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="8" selection-start-line="25" selection-end-line="26" selection-end-column="49" />
+            <state relative-caret-position="408">
+              <caret line="24" column="57" selection-start-line="24" selection-end-line="25" />
               <folding>
                 <element signature="e#27#234#0" expanded="true" />
               </folding>
@@ -113,8 +112,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/alan/services/controller/HabitController.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="487">
-              <caret line="163" column="70" lean-forward="true" selection-start-line="163" selection-start-column="70" selection-end-line="163" selection-end-column="70" />
+            <state relative-caret-position="510">
+              <caret line="150" column="21" lean-forward="true" selection-start-line="150" selection-start-column="21" selection-end-line="150" selection-end-column="21" />
               <folding>
                 <element signature="e#37#577#0" expanded="true" />
               </folding>
@@ -171,16 +170,16 @@
         <option value="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/CrudRepository.kt" />
         <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/SampleSpringKotlinMicroserviceApplication.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/NewScoreAlgorithm.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/ScoreAlgorithm.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/controller/HabitController.kt" />
-        <option value="$PROJECT_DIR$/src/test/kotlin/pl/alan/services/HabitControllerTests.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/DefaultScoreAlgorithm.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/DefaultHabitDbRepository.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/DefaultScoreAlgorithm.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/NewScoreAlgorithm.kt" />
+        <option value="$PROJECT_DIR$/src/test/kotlin/pl/alan/services/HabitControllerTests.kt" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-15" />
     <option name="y" value="472" />
     <option name="width" value="1292" />
@@ -326,7 +325,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin.pl.alan.services.SampleSpringKotlinMicroserviceApplicationKt">
+  <component name="RunManager" selected="JUnit.HabitControllerTests (1)">
     <configuration name="HabitControllerTests (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sample-spring-kotlin-microservice" />
       <extension name="coverage">
@@ -417,8 +416,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.pl.alan.services.SampleSpringKotlinMicroserviceApplicationKt" />
         <item itemvalue="JUnit.HabitControllerTests (1)" />
+        <item itemvalue="Kotlin.pl.alan.services.SampleSpringKotlinMicroserviceApplicationKt" />
         <item itemvalue="JUnit.HabitControllerTests" />
         <item itemvalue="JUnit.HabitControllerTests.test1AddHabit" />
         <item itemvalue="JUnit.PersonControllerTests" />
@@ -444,57 +443,57 @@
       <workItem from="1557562174259" duration="660000" />
       <workItem from="1557563333678" duration="53102000" />
       <workItem from="1557804681186" duration="1983000" />
-      <workItem from="1557807548676" duration="10175000" />
+      <workItem from="1557807548676" duration="17634000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="HabitControllerTests_(1) - 2019.05.11 at 03h 29m 27s.xml">
+    <history-entry file="HabitControllerTests_(1) - 2019.05.14 at 11h 17m 51s.xml">
       <configuration name="HabitControllerTests (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HabitControllerTests_(1) - 2019.05.11 at 20h 17m 07s.xml">
+    <history-entry file="HabitControllerTests_(1) - 2019.05.14 at 11h 28m 06s.xml">
       <configuration name="HabitControllerTests (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HabitControllerTests_(1) - 2019.05.11 at 20h 19m 18s.xml">
+    <history-entry file="HabitControllerTests_(1) - 2019.05.14 at 11h 28m 36s.xml">
       <configuration name="HabitControllerTests (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HabitControllerTests_(1) - 2019.05.11 at 20h 21m 50s.xml">
+    <history-entry file="HabitControllerTests_(1) - 2019.05.14 at 11h 29m 38s.xml">
       <configuration name="HabitControllerTests (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HabitControllerTests_(1) - 2019.05.12 at 15h 31m 44s.xml">
+    <history-entry file="HabitControllerTests_(1) - 2019.05.14 at 11h 30m 02s.xml">
       <configuration name="HabitControllerTests (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HabitControllerTests_(1) - 2019.05.12 at 15h 35m 33s.xml">
+    <history-entry file="HabitControllerTests_(1) - 2019.05.14 at 11h 35m 29s.xml">
       <configuration name="HabitControllerTests (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HabitControllerTests_(1) - 2019.05.12 at 15h 38m 05s.xml">
+    <history-entry file="HabitControllerTests_(1) - 2019.05.14 at 11h 36m 20s.xml">
       <configuration name="HabitControllerTests (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HabitControllerTests_(1) - 2019.05.12 at 15h 38m 42s.xml">
+    <history-entry file="HabitControllerTests_(1) - 2019.05.14 at 11h 38m 27s.xml">
       <configuration name="HabitControllerTests (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HabitControllerTests_(1) - 2019.05.12 at 15h 39m 26s.xml">
+    <history-entry file="HabitControllerTests_(1) - 2019.05.14 at 11h 39m 52s.xml">
       <configuration name="HabitControllerTests (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HabitControllerTests_(1) - 2019.05.12 at 15h 40m 03s.xml">
+    <history-entry file="HabitControllerTests_(1) - 2019.05.14 at 11h 41m 31s.xml">
       <configuration name="HabitControllerTests (1)" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116016000" />
+    <option name="totallyTimeSpent" value="123475000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.34754798" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.34754798" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.38244852" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.37919825" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -611,61 +610,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/alan/services/SampleSpringKotlinMicroserviceApplication.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" selection-start-line="25" selection-end-line="26" selection-end-column="49" />
-          <folding>
-            <element signature="e#27#234#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/HabitRepository.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/NewScoreAlgorithm.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="109" selection-start-line="5" selection-start-column="109" selection-end-line="5" selection-end-column="109" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/ScoreAlgorithm.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/alan/services/controller/HabitController.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="163" column="70" lean-forward="true" selection-start-line="163" selection-start-column="70" selection-end-line="163" selection-end-column="70" />
-          <folding>
-            <element signature="e#37#577#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/kotlin/pl/alan/services/HabitControllerTests.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="130" column="47" selection-start-line="130" selection-start-column="47" selection-end-line="130" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/DefaultScoreAlgorithm.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
-          <folding>
-            <element signature="e#37#140#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -676,13 +624,71 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/alan/services/controller/HabitController.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="150" column="21" lean-forward="true" selection-start-line="150" selection-start-column="21" selection-end-line="150" selection-end-column="21" />
+          <folding>
+            <element signature="e#37#577#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/alan/services/SampleSpringKotlinMicroserviceApplication.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="57" selection-start-line="24" selection-end-line="25" />
+          <folding>
+            <element signature="e#27#234#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/NewScoreAlgorithm.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/DefaultScoreAlgorithm.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+          <folding>
+            <element signature="e#37#140#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/ScoreAlgorithm.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/alan/services/repository/DefaultHabitDbRepository.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+        <state relative-caret-position="158">
+          <caret line="143" column="19" selection-start-line="143" selection-start-column="14" selection-end-line="143" selection-end-column="19" />
           <folding>
             <element signature="e#37#422#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/kotlin/pl/alan/services/HabitControllerTests.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="155" column="29" selection-start-line="155" selection-start-column="29" selection-end-line="155" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/alan/services/model/Habit.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
         </state>
       </provider>
     </entry>

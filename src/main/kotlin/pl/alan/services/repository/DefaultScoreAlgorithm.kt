@@ -10,7 +10,7 @@ open class DefaultScoreAlgorithm() : ScoreAlgorithm {
     override fun updateScoreAlgorithm(score: Double, scoreDelta: Int, scoreCategory: Int, positive: Boolean, habit: Habit): Double {
         habit.score = score
         if (habit.habitType == DefaultHabitDbRepository.both )
-            if (positive == true){
+            if (positive){
                 when (scoreCategory) {
                     4 -> habit.score += scoreDelta / 2
                     5 -> habit.score += 1

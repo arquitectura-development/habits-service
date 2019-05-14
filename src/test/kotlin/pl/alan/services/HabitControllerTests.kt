@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.test.web.client.TestRestTemplate
 import org.springframework.test.context.junit4.SpringRunner
+import pl.alan.services.Habits.habitType
 import pl.alan.services.model.Habit
 import pl.alan.services.repository.DefaultHabitDbRepository
 import pl.alan.services.repository.HabitRepository
@@ -29,12 +30,14 @@ class HabitControllerTests {
 
     @Test
     fun test1AddHabit() {
-        Database.connect("jdbc:mysql://sql3.freemysqlhosting.net/sql3291433", driver = "com.mysql.jdbc.Driver",
-                user = "sql3291433", password = "p9j5YyqdNy")
+        Database.connect("jdbc:mysql://127.0.0.1:3306/test", driver = "com.mysql.jdbc.Driver")
+
+
 
         //override repository.createTable() = SchemaUtils.create(Pruebas)
         var habit = Habit(1, 1, "Do Clean Code", habitType = 1, difficulty = 2 , score = 2.0, color = 1)
         habit = transaction {
+            repository.createTable()
             repository.create(habit)
         }
         Assert.assertNotNull(habit)
@@ -44,12 +47,12 @@ class HabitControllerTests {
 
     @Test
     fun test2UpdateHabit() {
-        var habit = Habit(1, 2, "Do Clean Code", habitType = 1, difficulty = 3 , score = 3.0, color = 2)
+        var habit = Habit(1, 1, "Do Clean Code", habitType =  1, difficulty = 3 , score = 3.0, color = 2)
         habit = transaction {
-            repository.update(1, 1, habit)
+            repository.update(1, 1, habit )
         }
         Assert.assertNotNull(habit)
-        Assert.assertEquals(2,  habit.userID)
+        Assert.assertEquals(3,  habit.difficulty)
     }
 
 
@@ -61,7 +64,7 @@ class HabitControllerTests {
         var lista  = listOf<Habit>()
 
         lista = transaction {
-            repository.findByUserId(184, 1)
+            repository.findByUserId(1, 1)
         }
         Assert.assertEquals(1 , lista.size)
 
@@ -69,29 +72,23 @@ class HabitControllerTests {
 
     @Test
     fun test4DeleteHabit() {
-        var habit = transaction {
+        var success: Int
+        success = transaction {
             repository.deleteById(1, 1)
         }
-        Assert.assertEquals(0 , habit)
+        Assert.assertEquals(1 , success)
     }
 
-    @Test
-    fun test5DeleteHabits() {
-        val habit = transaction {
-            repository.deleteAll()
-        }
-        Assert.assertEquals(0, 0)
-    }
 
     @Test
-    fun test6GetHabits() {
-        var habit = Habit(1, 1, "Do Clean Code", habitType = 1, difficulty = 2 , score = 2.0, color = 1)
-        habit = transaction {
-            repository.create(habit)
-        }
-        var habit2 = Habit(2, 2, "Do Clean Code 2", habitType = 1, difficulty = 2 , score = 2.0, color = 1)
+    fun test5GetHabits() {
+        var habit2 = Habit(2, 1, "Do Clean Code 2", habitType = 1, difficulty = 2 , score = 2.0, color = 1)
         habit2 = transaction {
             repository.create(habit2)
+        }
+        var habit3 = Habit(3, 2, "Do Clean Code 3", habitType = 2, difficulty = 2 , score = 2.0, color = 1)
+        habit3 = transaction {
+            repository.create(habit3)
         }
 
         var lista  = listOf<Habit>()
@@ -106,31 +103,57 @@ class HabitControllerTests {
 
 
     @Test
-    fun test7GetHabitColor() {
-        var habit = Habit(1, 1, "Do Clean Code", habitType = 1, difficulty = 2 , score = 30.0, color = 1)
-        habit = transaction {
-            repository.create(habit)
+    fun test6GetHabitColor() {
+        var habit4 = Habit(4, 1, "Do Clean Code 4", habitType = 3, difficulty = 2 , score = 30.0, color = 1)
+        habit4 = transaction {
+            repository.create(habit4)
         }
-        var color = repository.getHabitColor(habit)
+        var color = repository.getHabitColor(habit4)
         Assert.assertEquals(3, color)
     }
 
     @Test
-    fun test8UpdateHabitScore() {
-        var habit = Habit(1, 1, "Do Tests", habitType = 1, difficulty = 5 , score = 30.0, color = 4)
-        habit = transaction {
-            repository.create(habit)
-        }
-        repository.updateHabitScore(2, 1, true,  habit)
-        Assert.assertEquals(32.5, habit.score, 2.5)
-
-        var habit2 = Habit(2, 1, "Get Drunk", habitType = 2, difficulty = 3 , score = 8.0, color = 4)
+    fun test7UpdateHabitScoreType1() {
+        var habit2 = Habit(2, 1, "Do Clean Code 2", habitType = 1, difficulty = 2 , score = 2.0, color = 1)
         habit2 = transaction {
-            repository.create(habit2)
+            repository.updateHabitScore(1, 2, true, habit2)
         }
-        repository.updateHabitScore(2, 1, true, habit2)
-        Assert.assertEquals(2.0, habit2.score, 6.0)
+        Assert.assertEquals(5.0, habit2.score, 3.0)
+    }
 
+    @Test
+    fun test8UpdateHabitScoreType2() {
+        var habit3 = Habit(3, 2, "Do Clean Code 3", habitType = 2, difficulty = 2 , score = 2.0, color = 1)
+        habit3 = transaction {
+            repository.updateHabitScore(2, 3, true, habit3)
+        }
+        Assert.assertEquals(0.0, habit3.score, 2.5)
+
+
+    }
+
+    @Test
+    fun test9UpdateHabitScoreType3() {
+        var habit4 = Habit(4, 1, "Do Clean Code 4", habitType = 3, difficulty = 2 , score = 30.0, color = 1)
+        habit4 = transaction {
+             repository.updateHabitScore(1, 4, true, habit4)
+        }
+        Assert.assertEquals(32.5, habit4.score, 2.5)
+
+        habit4 = transaction {
+            repository.updateHabitScore(1, 4, false, habit4)
+        }
+        Assert.assertEquals(30.0, habit4.score, 2.0)
+
+    }
+
+    @Test
+    fun test9ZDeleteHabits() {
+        var success: Int
+        success = transaction {
+            repository.deleteAll()
+        }
+        Assert.assertEquals(3, success)
     }
 
 
