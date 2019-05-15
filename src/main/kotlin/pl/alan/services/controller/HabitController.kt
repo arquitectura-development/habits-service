@@ -21,7 +21,6 @@ class HabitController {
     @Autowired
     lateinit var repository: DefaultHabitDbRepository
 
-
     @GetMapping()
     @ApiResponses(
             ApiResponse(code = 200, message = "The service is up")
@@ -32,24 +31,24 @@ class HabitController {
 
     @GetMapping("/admin/habits")
     @ApiResponses(
-            ApiResponse(code = 200, message = "Successful operation"),
-            ApiResponse(code = 401, message = "Incorrect or empty userId"),
-            ApiResponse(code = 500, message = "Server error")
+            ApiResponse(code = 200, message = SUCCESSRESPONSE),
+            ApiResponse(code = 401, message = UNAUTHORIZEDRESPONSE),
+            ApiResponse(code = 500, message = SERVERERRORRESPONSE)
     )
     fun findAll(@RequestParam userId: Int): List<Habit> =
             transaction {
                 if (userId == 0)
                     repository.findAll(userId)
                 else throw  ResponseStatusException(
-                        HttpStatus.UNAUTHORIZED, "Incorrect or empty userId");
+                        HttpStatus.UNAUTHORIZED, UNAUTHORIZEDRESPONSE)
             }
 
     @GetMapping("/users/habits")
     @ApiResponses(
-            ApiResponse(code = 200, message = "Successful operation"),
-            ApiResponse(code = 401, message = "Incorrect or empty userId"),
-            ApiResponse(code = 404, message = "Habit or user not found"),
-            ApiResponse(code = 500, message = "Server error")
+            ApiResponse(code = 200, message = SUCCESSRESPONSE),
+            ApiResponse(code = 401, message = UNAUTHORIZEDRESPONSE),
+            ApiResponse(code = 404, message = NOTFOUNDRESPONSE),
+            ApiResponse(code = 500, message = SERVERERRORRESPONSE)
     )
     fun findByUserId(@RequestParam userId: Int): List<Habit> {
         var lista = listOf<Habit>()
@@ -58,10 +57,10 @@ class HabitController {
                 lista = repository.findByUserId(userId)
                 if (lista.isEmpty()){
                     throw  ResponseStatusException(
-                            HttpStatus.NOT_FOUND, "Habit or user not found");
+                            HttpStatus.NOT_FOUND, NOTFOUNDRESPONSE)
                 }
             }else throw  ResponseStatusException(
-                    HttpStatus.UNAUTHORIZED, "Incorrect or empty userId");
+                    HttpStatus.UNAUTHORIZED, UNAUTHORIZEDRESPONSE);
         }
         return lista
     }
@@ -69,9 +68,9 @@ class HabitController {
     @PostMapping("/users/habits")
     @ApiResponses(
             ApiResponse(code = 201, message = "Successful habit creation"),
-            ApiResponse(code = 400, message = "Incorrect json"),
-            ApiResponse(code = 401, message = "Incorrect or empty userId"),
-            ApiResponse(code = 500, message = "Server error")
+            ApiResponse(code = 400, message = BADREQUESTRESPONSE),
+            ApiResponse(code = 401, message = UNAUTHORIZEDRESPONSE),
+            ApiResponse(code = 500, message = SERVERERRORRESPONSE)
     )
     fun create(@RequestBody body: Habit, @RequestParam userId: Int): ResponseEntity<Any> {
         var habito: Habit = body
@@ -81,19 +80,19 @@ class HabitController {
                     habito = repository.create(body)
 
                 } else throw  ResponseStatusException(
-                        HttpStatus.UNAUTHORIZED, "Incorrect or empty userId");
+                        HttpStatus.UNAUTHORIZED, UNAUTHORIZEDRESPONSE)
             } else throw  ResponseStatusException(
-                    HttpStatus.BAD_REQUEST, "Incorrect json");
+                    HttpStatus.BAD_REQUEST, BADREQUESTRESPONSE)
         }
         return ResponseEntity<Any>(HttpStatus.CREATED)
     }
 
     @GetMapping("/users/habits/{habitId}")
     @ApiResponses(
-            ApiResponse(code = 200, message = "Successful operation"),
-            ApiResponse(code = 401, message = "Incorrect or empty userId"),
-            ApiResponse(code = 404, message = "Habit or user not found"),
-            ApiResponse(code = 500, message = "Server error")
+            ApiResponse(code = 200, message = SUCCESSRESPONSE),
+            ApiResponse(code = 401, message = UNAUTHORIZEDRESPONSE),
+            ApiResponse(code = 404, message = NOTFOUNDRESPONSE),
+            ApiResponse(code = 500, message = SERVERERRORRESPONSE)
     )
     fun findByUserHabitId(@RequestParam userId: Int, @PathVariable habitId: Int): List<Habit> {
         var lista = listOf<Habit>()
@@ -101,10 +100,10 @@ class HabitController {
             if (userId != null) {
                 lista = repository.findByUserHabitId(userId, habitId)
                 if (lista.isEmpty()) {
-                    throw  ResponseStatusException(HttpStatus.NOT_FOUND, "Habit or user not found");
+                    throw  ResponseStatusException(HttpStatus.NOT_FOUND, NOTFOUNDRESPONSE)
                 }
             } else throw  ResponseStatusException(
-                    HttpStatus.UNAUTHORIZED, "Incorrect or empty userId");
+                    HttpStatus.UNAUTHORIZED, UNAUTHORIZEDRESPONSE)
         }
         return lista
     }
@@ -112,10 +111,10 @@ class HabitController {
 
     @DeleteMapping("/users/habits/{habitId}")
     @ApiResponses(
-            ApiResponse(code = 200, message = "Successful operation"),
-            ApiResponse(code = 401, message = "Incorrect or empty userId"),
-            ApiResponse(code = 404, message = "Habit or user not found"),
-            ApiResponse(code = 500, message = "Server error")
+            ApiResponse(code = 200, message = SUCCESSRESPONSE),
+            ApiResponse(code = 401, message = UNAUTHORIZEDRESPONSE),
+            ApiResponse(code = 404, message = NOTFOUNDRESPONSE),
+            ApiResponse(code = 500, message = SERVERERRORRESPONSE)
     )
     fun deleteById(@RequestParam userId: Int, @PathVariable habitId: Int) {
         var num: Int = 1
@@ -124,21 +123,21 @@ class HabitController {
                 num = repository.deleteById(userId, habitId)
                 if (num == 0) {
                     throw  ResponseStatusException(
-                            HttpStatus.NOT_FOUND, "Habit or user not found")
+                            HttpStatus.NOT_FOUND, NOTFOUNDRESPONSE)
                 }
             } else throw  ResponseStatusException(
-                    HttpStatus.UNAUTHORIZED, "Incorrect or empty userId");
+                    HttpStatus.UNAUTHORIZED, UNAUTHORIZEDRESPONSE)
         }
     }
 
 
     @PutMapping("/users/habits/{habitId}")
     @ApiResponses(
-            ApiResponse(code = 200, message = "Successful operation"),
-            ApiResponse(code = 400, message = "Incorrect json"),
-            ApiResponse(code = 401, message = "Incorrect or empty userId"),
-            ApiResponse(code = 404, message = "Habit or user not found"),
-            ApiResponse(code = 500, message = "Server error")
+            ApiResponse(code = 200, message = SUCCESSRESPONSE),
+            ApiResponse(code = 400, message = BADREQUESTRESPONSE),
+            ApiResponse(code = 401, message = UNAUTHORIZEDRESPONSE),
+            ApiResponse(code = 404, message = NOTFOUNDRESPONSE),
+            ApiResponse(code = 500, message = SERVERERRORRESPONSE)
     )
     fun update(@PathVariable habitId: Int, @RequestParam userId: Int, @RequestParam(required = false) positive: Boolean, @RequestParam(required = false) updateScore: Boolean, @RequestBody body: Habit): Habit {
         var habito : Habit = body
@@ -149,17 +148,25 @@ class HabitController {
                 if (userId != null) {
                     lista = repository.findByUserHabitId(userId, habitId)
                     if (lista.isEmpty()){
-                        throw  ResponseStatusException(HttpStatus.NOT_FOUND, "Habit or user not found");
+                        throw  ResponseStatusException(HttpStatus.NOT_FOUND, NOTFOUNDRESPONSE)
                     } else {
                         if (updateScore)
                             habito = repository.updateHabitScore(userId, habitId, positive, body)
                         else
                             habito = repository.update(userId, habitId, body)
                     }
-                } else throw  ResponseStatusException(HttpStatus.UNAUTHORIZED, "Incorrect userID");
-            } else throw  ResponseStatusException(HttpStatus.BAD_REQUEST, "Incorrect json");
+                } else throw  ResponseStatusException(HttpStatus.UNAUTHORIZED, "Incorrect userID")
+            } else throw  ResponseStatusException(HttpStatus.BAD_REQUEST, BADREQUESTRESPONSE)
         }
         return habito
+    }
+
+    companion object {
+        const val SUCCESSRESPONSE = "Successful operation"
+        const val UNAUTHORIZEDRESPONSE = "Incorrect or empty userId"
+        const val NOTFOUNDRESPONSE = "Habit or user not found"
+        const val SERVERERRORRESPONSE = "Server error"
+        const val BADREQUESTRESPONSE = "Incorrect json"
     }
 }
 
